@@ -1,0 +1,72 @@
+*::after {
+    box-sizing: border-box;
+}
+  
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+html {
+    color-scheme: dark light;
+}
+
+/* min body height */
+body {
+    min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+.read{
+    color: beige;
+    background-color: rgb(29, 146, 29);
+}
+
+form{
+    margin-bottom: 50px;
+}
+
+.library{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+
+.books{
+    height: 250px;
+    width: 250px;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+}
+
+.books .bookInfo{
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bookInfo h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.bookInfo p{
+    font-size: 25px;
+    font-weight: 500;
+}
