@@ -30,6 +30,11 @@ video {
     max-width: 100%;
 }
 
+body{
+    width: 85%;
+    margin: 0 auto;
+}
+
 .read{
     color: beige;
     background-color: rgb(29, 146, 29);
@@ -40,15 +45,16 @@ form{
 }
 
 .library{
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    margin-left: 50px;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(auto-fill, minmax(180px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 30px;
+    justify-items: center;
 }
 
 .books{
     height: 250px;
-    width: 250px;
+    width: min(100%, 200px);
     border: 1px solid green;
     display: flex;
     flex-direction: column;
