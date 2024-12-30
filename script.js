@@ -13,9 +13,46 @@ let titleNode, titleHead, titleContent;
 let authorNode, authorHead, authorContent;
 let buttons, rmbutn, readButn;
 
-button.addEventListener('click', addBookToLibrary)
 addBook.addEventListener('click', () => {
     modalForm.showModal();
+})
+
+title.addEventListener('input', () => {
+    console.log(title.validity.rangeOverflow)
+    if (title.validity.valueMissing){
+        title.setCustomValidity('Enter title name')
+        title.classList.add('error')
+        title.previousElementSibling.textContent = title.validationMessage
+    }
+    else{
+        title.setCustomValidity('')
+        title.classList.remove('error')
+        title.previousElementSibling.textContent = ''
+    }
+})
+
+author.addEventListener('input', () => {
+    console.log(author.validity.rangeOverflow)
+    if (author.validity.valueMissing){
+        author.setCustomValidity('Enter author name')
+        author.classList.add('error')
+        author.previousElementSibling.textContent = author.validationMessage
+    }
+    else{
+        author.setCustomValidity('')
+        author.classList.remove('error')
+        author.previousElementSibling.textContent = ''
+    }
+})
+
+form.addEventListener('submit', (event) => {
+    if (!title.checkValidity()){
+        event.preventDefault() // prvent form from submitting
+    }
+    else if(!author.checkValidity()){
+        event.preventDefault() // prvent form from submitting
+    }
+    addBookToLibrary()
 })
 
 function Book(title, author){
@@ -100,4 +137,6 @@ function markRead(e, index, rmbtn){
     rmbtn.style.cssText = "fill: #22c55e;"
     console.log(rmbtn)
 }
+
+
 
